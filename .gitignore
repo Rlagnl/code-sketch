@@ -1,5 +1,6 @@
 .DS_Store
 node_modules/
+buildcache/
 /dist/
 /output/
 /test/unit/coverage/
