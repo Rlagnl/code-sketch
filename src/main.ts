@@ -5,11 +5,11 @@ import Vue from 'vue'
 import router from './router'
 import App from './App.vue'
 import CustomLifeCycle from './utils/customLifeCycle'
-// viewport的polyfill方案，解决vw适配兼容性问题
-const vub = require('viewport-units-buggyfill')
-window.addEventListener('load', () => {
-  vub.init({ hacks: window.viewportUnitsBuggyfillHacks })
-})
+
+// rem适配方案，初始化 html 的 fontSize 逻辑
+const designWidth: number = 375;
+const ratio = innerWidth / designWidth * devicePixelRatio
+document.getElementsByTagName('html')[0].style.fontSize = (ratio * 5) + 'px'
 
 // 初始化Vue实例
 Vue.config.productionTip = false
